@@ -22,6 +22,10 @@ const userSchema = new Schema(
     passwordHash: {
       type: String,
       required: [true, "Password is required."]
+    },
+    imgUrl: {
+      type: String,
+      default: "https://cdn-icons-png.flaticon.com/512/6872/6872369.png"
     }
   },
   {

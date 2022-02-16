@@ -18,10 +18,10 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 
-const projectName = 'lab-express-irontumblr';
+const projectName = 'IRONHMBLR';
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+app.locals.title = `${capitalized(projectName)}`;
 
 // bind user to view - locals
 app.use('/', (req, res, next) => {
@@ -35,6 +35,9 @@ app.use('/', index);
 
 const authRoutes = require('./routes/auth.routes');
 app.use('/', authRoutes);
+
+const postRoutes = require('./routes/post.routes');
+app.use('/post', postRoutes)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
