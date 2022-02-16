@@ -1,2 +1,11 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>CHECK WHAT YOUR FRIENDS POSTED!</h1>
+
+<div class="landing-page">
+    {{#each posts}}
+    <div class="post-box">
+        <a href="post/{{this._id}}">
+            <img src="{{picPath}}" alt="User Image">
+        </a>
+    </div>
+    {{/each}}
+</div>
